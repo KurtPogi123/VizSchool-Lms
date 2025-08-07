@@ -1,0 +1,56 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+}}
+{{> theme_boost/head }}
+
+<body {{{ bodyattributes }}}>
+{{> core/local/toast/wrapper}}
+<div id="page-wrapper" class="d-print-block">
+
+    {{{ output.standard_top_of_body_html }}}
+
+    {{> theme_boost/navbar }}
+    
+    {{#customfrontpagecontent}}
+    <div id="page" class="container-fluid mt-0">
+        <div id="page-content" class="pb-3 d-print-block">
+            <div id="region-main-box">
+                <section id="region-main" aria-label="{{#str}}content{{/str}}">
+                    {{{ customfrontpagecontent }}}
+                    <span class="notifications" id="user-notifications"></span>
+                    {{{ output.main_content }}}
+                </section>
+            </div>
+        </div>
+    </div>
+    {{/customfrontpagecontent}}
+    
+    {{^customfrontpagecontent}}
+    <div id="page" class="container-fluid mt-0">
+        <div id="page-content" class="pb-3 d-print-block">
+            <div id="region-main-box" class="col-12">
+                <section id="region-main" aria-label="{{#str}}content{{/str}}">
+                    <span class="notifications" id="user-notifications"></span>
+                    <div class="region_main_settings_menu_proxy"></div>
+                    {{{ output.course_content_header }}}
+                    {{{ output.main_content }}}
+                    {{{ output.activity_navigation }}}
+                    {{{ output.course_content_footer }}}
+                </section>
+                {{#hasblocks}}
+                <section data-region="blocks-column" class="d-print-none col-md-3" aria-label="{{#str}}blocks{{/str}}">
+                    {{{ sidepreblocks }}}
+                </section>
+                {{/hasblocks}}
+            </div>
+        </div>
+    </div>
+    {{/customfrontpagecontent}}
+
+    {{> theme_boost/footer }}
+</div>
+
+{{{ output.standard_end_of_body_html }}}
+
+</body>
+</html>
