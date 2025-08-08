@@ -6,28 +6,14 @@ $PAGE->set_url(new moodle_url('/local/staticpage/terms-conditions.php'));
 $PAGE->set_context(context_system::instance());
 $PAGE->set_title('Terms and Conditions');
 $PAGE->set_heading('Terms and Conditions');
+$PAGE->requires->css('/local/staticpage/styles.css');
 
 echo $OUTPUT->header();
 ?>
 
-<style>
-
-  img {
-    height: 150px !important;
-    width: 150px !important;
-    object-fit: cover;
-  }
-
-  ul {
-    list-style: disc;
-    margin-left: 32px;
-    }
-
-</style>
-
 <div class="container">
   <div class="text-center mb-8">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfFSO81s46Fd_TdVv2kBjkJUnMOnvsMSOLg&s" alt="VizSchool Logo" />
+    <img class="header-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfFSO81s46Fd_TdVv2kBjkJUnMOnvsMSOLg&s" alt="VizSchool Logo" />
     <h4 class="fw-bold text-primary">End User License Agreement</h4>
     <p class="text-muted mt-1">Effective Date: 2025</p>
   </div>
@@ -47,7 +33,7 @@ echo $OUTPUT->header();
 
     <div class="mt-5">
       <h5 class="fw-bold" >3. Restrictions</h5>
-      <ul >
+      <ul class="list">
         <li>Copy, modify, distribute, or create derivative works of any content from VizSchool LMS.</li>
         <li>Share, sell, or sublicense your account or any portion of the platform.</li>
         <li>Use the platform for any unlawful or unauthorized purpose.</li>
@@ -72,7 +58,7 @@ echo $OUTPUT->header();
 
     <div class="mt-5">
       <h5 class="fw-bold" >7. Disclaimers & Limitation of Liability</h5>
-      <ul >
+      <ul class="list">
         <li>VizSchool LMS is provided ‘as is’ without warranties of any kind. We do not guarantee uninterrupted or error-free service.</li>
         <li>We are not liable for any indirect, incidental, or consequential damages arising from your use of the platform.</li>
       </ul>
