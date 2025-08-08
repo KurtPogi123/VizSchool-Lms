@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^/moodle-latest-500/moodle/static/(.\*)\.html$ /moodle-latest-500/moodle/local/staticpage/view.php?page=$1&%{QUERY_STRING} [L]
