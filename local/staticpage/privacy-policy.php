@@ -31,7 +31,7 @@ echo $OUTPUT->header();
       <h5 class="fw-bold" >2. Information We Collect</h5>
       <p>We may collect the following types of information:</p>
 
-       <ul >
+       <ul class="list">
         <li>Personal Information: Name, email address, contact details, and other information you provide when registering an account.</li>
         <li>Usage Data: Information on how you interact with our platform, including login details, course progress, and preferences.</li>
         <li>Device & Technical Data: IP address, browser type, and device information for security and analytics purposes.</li>
@@ -42,7 +42,7 @@ echo $OUTPUT->header();
       <h5 class="fw-bold" >3. How We Use Your Information</h5>
       <p>We use your information to:</p>
 
-      <ul >
+      <ul class="list">
         <li>Provide and improve our services.</li>
         <li>Personalize your learning experience.</li>
         <li>Communicate with you regarding updates, support, and promotional content (you may opt out anytime).</li>
@@ -54,7 +54,7 @@ echo $OUTPUT->header();
       <h5 class="fw-bold" >4. How We Share Your Information</h5>
        <p>We do not sell your personal information. However, we may share it with:</p>
 
-       <ul >
+       <ul class="list">
         <li>Service Providers: Trusted third parties that help us operate our platform (e.g., hosting, analytics, customer support).</li>
         <li>Legal Authorities: When required by law or to protect the rights and safety of users and our platform.</li>
       </ul>
@@ -72,7 +72,7 @@ echo $OUTPUT->header();
 
       <p>You have the right to:</p>
 
-       <ul >
+       <ul class="list">
         <li>Access, update, or delete your personal information.</li>
         <li>Opt out of marketing communications.</li>
         <li>Request a copy of your data (subject to verification).</li>

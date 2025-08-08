@@ -33,7 +33,7 @@ echo $OUTPUT->header();
 
     <div class="mt-5">
       <h5 class="fw-bold" >3. Restrictions</h5>
-      <ul >
+      <ul class="list">
         <li>Copy, modify, distribute, or create derivative works of any content from VizSchool LMS.</li>
         <li>Share, sell, or sublicense your account or any portion of the platform.</li>
         <li>Use the platform for any unlawful or unauthorized purpose.</li>
@@ -58,7 +58,7 @@ echo $OUTPUT->header();
 
     <div class="mt-5">
       <h5 class="fw-bold" >7. Disclaimers & Limitation of Liability</h5>
-      <ul >
+      <ul class="list">
         <li>VizSchool LMS is provided ‘as is’ without warranties of any kind. We do not guarantee uninterrupted or error-free service.</li>
         <li>We are not liable for any indirect, incidental, or consequential damages arising from your use of the platform.</li>
       </ul>

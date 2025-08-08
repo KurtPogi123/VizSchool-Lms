@@ -29,18 +29,18 @@ echo $OUTPUT->header();
          Quick Links
         </h5>
         <p class="text-primary fw-bold">About</p>
-        <ul>
+        <ul class="list">
             <li>Courses</li>
             <li>Tutors</li>
         </ul>
         <p class="text-primary fw-bold">Courses</p>
-        <ul>
+        <ul class="list">
             <li>All Courses</li>
             <li>Primary Courses</li>
             <li>Secondary Courses</li>
         </ul>
         <p class="text-primary fw-bold">Programmes</p>
-        <ul>
+        <ul class="list">
             <li>STEM Programmes</li>
             <li>Language Programmes</li>
             <li>Arts & Humanities</li>
@@ -66,7 +66,7 @@ echo $OUTPUT->header();
          Academic Topics
         </h5>
          <p class="text-primary fw-bold">Primary Classes</p>
-         <ul>
+         <ul class="list">
             <li>Primary 1</li>
             <li>Primary 2</li>
             <li>Primary 3</li>
@@ -75,7 +75,7 @@ echo $OUTPUT->header();
             <li>Primary 6</li>
         </ul>
         <p class="text-primary fw-bold">Secondary Classes</p>
-        <ul>
+        <ul class="list">
             <li>Secondary 1</li>
             <li>Secondary 2</li>
             <li>Secondary 3</li>
