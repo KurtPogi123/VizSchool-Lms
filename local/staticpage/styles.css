@@ -1,0 +1,80 @@
+ul {
+  list-style: disc;
+  margin-left: 32px;
+}
+
+.hero-container {
+  background-image: url("pix/gradient-bg.png");
+  background-size: cover;
+  min-height: 80dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container > p {
+  font-size: 20px !important;
+}
+
+h2 {
+  font-size: 44px !important;
+}
+
+.btn-outline-secondary {
+  border-color: white !important;
+  color: white !important;
+}
+
+.img-1 {
+  background-image: url("pix/kid.png");
+  background-size: cover;
+}
+
+.img-2 {
+  background-image: url("pix/lady.png");
+  background-size: cover;
+}
+
+.img-3 {
+  background-image: url("pix/kid-studying.png");
+  background-size: cover;
+}
+
+.img-1,
+.img-2,
+.img-3 {
+  height: 400px;
+  width: 400px;
+  max-height: 400px;
+  max-width: 400px;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header-img {
+  height: 150px !important;
+  width: 150px !important;
+  object-fit: cover;
+}
+
+.mx-auto {
+  margin-inline: auto;
+}

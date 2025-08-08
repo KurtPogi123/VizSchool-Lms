@@ -6,28 +6,14 @@ $PAGE->set_url(new moodle_url('/local/staticpage/terms-conditions.php'));
 $PAGE->set_context(context_system::instance());
 $PAGE->set_title('Terms and Conditions');
 $PAGE->set_heading('Terms and Conditions');
+$PAGE->requires->css('/local/staticpage/styles.css');
 
 echo $OUTPUT->header();
 ?>
 
-<style>
-
-  img {
-    height: 150px !important;
-    width: 150px !important;
-    object-fit: cover;
-  }
-
-  ul {
-    list-style: disc;
-    margin-left: 32px;
-    }
-
-</style>
-
 <div class="container">
   <div class="text-center mb-8">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfFSO81s46Fd_TdVv2kBjkJUnMOnvsMSOLg&s" alt="VizSchool Logo" />
+    <img class="header-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfFSO81s46Fd_TdVv2kBjkJUnMOnvsMSOLg&s" alt="VizSchool Logo" />
     <h4 class="fw-bold text-primary">End User License Agreement</h4>
     <p class="text-muted mt-1">Effective Date: 2025</p>
   </div>
