@@ -6,32 +6,15 @@ $PAGE->set_url(new moodle_url('/local/staticpage/privacy-policy.php'));
 $PAGE->set_context(context_system::instance());
 $PAGE->set_title('Privacy Policy');
 $PAGE->set_heading('Privacy Policy');
+$PAGE->requires->css('/local/staticpage/styles.css');
 
 echo $OUTPUT->header();
 ?>
 
-<style>
-
-  img {
-    height: 150px !important;
-    width: 150px !important;
-    object-fit: cover;
-  }
-  
-    ul {
-    list-style: disc;
-    margin-left: 32px;
-    }
-
-  .mx-auto {
-    margin-inline: auto;
-  }
-
-</style>
 
 <div class="container">
   <div class="text-center mb-8">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfFSO81s46Fd_TdVv2kBjkJUnMOnvsMSOLg&s" alt="VizSchool Logo" />
+    <img class="header-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfFSO81s46Fd_TdVv2kBjkJUnMOnvsMSOLg&s" alt="VizSchool Logo" />
     <h4 class="fw-bold text-primary">Privacy Policy</h4>
     <p class="text-muted mt-1">Effective Date: 2025</p>
   </div>
@@ -48,7 +31,7 @@ echo $OUTPUT->header();
       <h5 class="fw-bold" >2. Information We Collect</h5>
       <p>We may collect the following types of information:</p>
 
-       <ul >
+       <ul class="list">
         <li>Personal Information: Name, email address, contact details, and other information you provide when registering an account.</li>
         <li>Usage Data: Information on how you interact with our platform, including login details, course progress, and preferences.</li>
         <li>Device & Technical Data: IP address, browser type, and device information for security and analytics purposes.</li>
@@ -59,7 +42,7 @@ echo $OUTPUT->header();
       <h5 class="fw-bold" >3. How We Use Your Information</h5>
       <p>We use your information to:</p>
 
-      <ul >
+      <ul class="list">
         <li>Provide and improve our services.</li>
         <li>Personalize your learning experience.</li>
         <li>Communicate with you regarding updates, support, and promotional content (you may opt out anytime).</li>
@@ -71,7 +54,7 @@ echo $OUTPUT->header();
       <h5 class="fw-bold" >4. How We Share Your Information</h5>
        <p>We do not sell your personal information. However, we may share it with:</p>
 
-       <ul >
+       <ul class="list">
         <li>Service Providers: Trusted third parties that help us operate our platform (e.g., hosting, analytics, customer support).</li>
         <li>Legal Authorities: When required by law or to protect the rights and safety of users and our platform.</li>
       </ul>
@@ -89,7 +72,7 @@ echo $OUTPUT->header();
 
       <p>You have the right to:</p>
 
-       <ul >
+       <ul class="list">
         <li>Access, update, or delete your personal information.</li>
         <li>Opt out of marketing communications.</li>
         <li>Request a copy of your data (subject to verification).</li>
