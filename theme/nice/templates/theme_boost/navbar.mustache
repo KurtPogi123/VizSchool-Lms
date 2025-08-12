@@ -90,198 +90,173 @@
     }
 }}
 
-
+<div class="container">
+   <div class="d-lg-none upper-bar">
+      <div id="usernavigation" class="d-flex ms-auto align-items-center" data-nice-type="user-navigation">
+         {{# output.search_box }}
+         {{#isloggedin}}
+         {{^isguest}}
+         <div class="nice-search-container">
+            <a href="{{searchurl}}" aria-label="Search" data-nice-is-guest="{{isguest}}">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+         </div>
+         {{/isguest}}
+         {{/isloggedin}}
+         {{/output.search_box }}
+         {{{ output.navbar_plugin_output }}}
+         <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+            {{#usermenu}}
+            {{> core/user_menu }}
+            {{/usermenu}}
+         </div>
+         <div class="d-none d-sm-block">
+            {{#primarymoremenu}}
+            {{#isloggedin}}
+            {{#canaccessadmin}}
+            <div class="nice-settings-container ">
+               <a class="nice-settings" href="{{{ config.wwwroot }}}/admin/search.php">
+               <i class="fa-solid fa-gear"></i>
+               </a>
+            </div>
+            {{/canaccessadmin}}
+            {{/isloggedin}}
+            {{/primarymoremenu}}
+         </div>
+         <div class="d-none d-sm-block">
+            {{{ output.edit_switch }}}
+         </div>
+      </div>
+      <!--End usernavigation -->
+   </div>
+</div>
 <!--End container -->
 <div class="nice-navbar-container">
    <div class="container">
-    <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center" style="padding:8px 0;">
-         <!-- Logo Section -->
-         <!-- Logo Section -->
-<div class="navbar-brand-section">
-   {{#is_dashboard}}
-   <a href="{{{ config.homeurl }}}" class="navbar-brand d-md-flex align-items-center m-0 me-4 p-0">
-   {{#hasnavbarlogo}}
-<img src="{{navbar_logo}}" class="logo me-1" alt="{{sitename}}" style="width: 80px; max-width: 100%; height: auto;">
-{{/hasnavbarlogo}}
-   {{^hasnavbarlogo}}
-   {{{ sitename }}}
-   {{/hasnavbarlogo}}
-   </a>
-   {{/is_dashboard}}
-   {{^is_dashboard}}
- <a href="{{{ sitehomeurl }}}" class="navbar-brand d-md-flex align-items-center m-0 me-2 p-0">
-   {{#hasnavbarlogo}}
-   <img src="{{navbar_logo}}" class="logo me-1" alt="{{sitename}}"
-        style="width: calc({{navbar_logo_width}}px * 0.8); max-width: 100%; height: auto;">
-   {{/hasnavbarlogo}}
-   {{^hasnavbarlogo}}
-   {{{ sitename }}}
-   {{/hasnavbarlogo}}
-   </a>
-   {{/is_dashboard}}
-</div>
-
-         <!-- Mobile Toggle Button -->
-         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-expand-lg " style="padding:0">
+         {{#is_dashboard}}
+         <a href="{{{ config.homeurl }}}" class="navbar-brand d-md-flex align-items-center m-0 me-4 p-0">
+         {{#hasnavbarlogo}}
+         <img src="{{navbar_logo}}" class="logo me-1 nice-navbar-logo" alt="{{sitename}}" width="{{navbar_logo_width}}">
+         {{/hasnavbarlogo}}
+         {{^hasnavbarlogo}}
+         {{{ sitename }}}
+         {{/hasnavbarlogo}}
+         </a>
+         {{/is_dashboard}}
+         {{^is_dashboard}}
+         <a href="{{{ sitehomeurl }}}" class="navbar-brand d-md-flex align-items-center m-0 me-4 p-0">
+         {{#hasnavbarlogo}}
+         <img src="{{navbar_logo}}" class="logo me-1" alt="{{sitename}}" width="{{navbar_logo_width}}">
+         {{/hasnavbarlogo}}
+         {{^hasnavbarlogo}}
+         {{{ sitename }}}
+         {{/hasnavbarlogo}}
+         </a>
+         {{/is_dashboard}}
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <i class="fa-solid fa-bars"></i>
          </button>
-
-         <!-- Main Navigation Menu -->
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav mx-auto d-flex flex-row">
-               <!-- Main Menu Items from Figma Design -->
-               <div class="nav-item dropdown me-4">
-                  <a class="nav-link" href="{{{ config.wwwroot }}}/local/staticpage/about-us.php" style="color: #333; font-weight: 500;">
-                     About
-                  </a>
-
-               </div>
-               
-               <div class="nav-item dropdown me-4">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #333; font-weight: 500;">
-                     Course
-                  </a>
-                  <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="#">All Courses</a></li>
-                     <li><a class="dropdown-item" href="#">Categories</a></li>
-                  </ul>
-               </div>
-
-               <div class="nav-item me-4">
-                  <a class="nav-link" href="#" style="color: #333; font-weight: 500;">Reviews</a>
-               </div>
-
-               <div class="nav-item dropdown me-4">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #333; font-weight: 500;">
-                     Programmes
-                  </a>
-                  <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="#">Academic Programs</a></li>
-                     <li><a class="dropdown-item" href="#">Professional Development</a></li>
-                  </ul>
-               </div>
-
-               <div class="nav-item me-4">
-                  <a class="nav-link" href="#" style="color: #333; font-weight: 500;">Plans</a>
-               </div>
-
-               <!-- Original Moodle Navigation Items (Hidden on larger screens, shown in mobile) -->
-               <div class="d-lg-none">
-                  {{#primarymoremenu}}
-                  <div class="navbar-primary-navigation mt-3 pt-3 border-top">
-                     <ul class="navbar-nav">
-                        {{#homepage_link_visibility}}
-                        <li class="nav-item">
-                           <a class="nav-link" href="{{sitehomeurl}}">
-                           {{home_string}}
-                           </a>
-                        </li>
-                        {{/homepage_link_visibility}}
-                        {{#isloggedin}}
-                        {{#dashboard_link_visibility}}
-                        <li class="nav-item">
-                           <a class="nav-link" href="{{config.homeurl}}">
-                           {{dashboard_string}}
-                           </a>
-                        </li>
-                        {{/dashboard_link_visibility}}
-                        {{/isloggedin}}
-                        {{{output.custom_menu}}}
-                     </ul>
-                  </div>
-                  {{/primarymoremenu}}
-               </div>
+            {{#primarymoremenu}}
+            <div class="navbar-primary-navigation">
+               <ul class="navbar-nav me-auto">
+                  {{#homepage_link_visibility}}
+                  <li class="nav-item">
+                     <a class="nav-link" href="{{sitehomeurl}}">
+                     {{home_string}}
+                     </a><!--End nav-link -->
+                  </li>
+                  <!--End nav-item -->
+                  {{/homepage_link_visibility}}
+                  {{#isloggedin}}
+                  {{#dashboard_link_visibility}}
+                  <li class="nav-item">
+                     <a class="nav-link" href="{{config.homeurl}}">
+                     {{dashboard_string}}
+                     </a><!--End nav-link -->
+                  </li>
+                  <!--End nav-item -->
+                  {{/dashboard_link_visibility}}
+                  {{/isloggedin}}
+                  {{{output.custom_menu}}}
+               </ul>
             </div>
-
-            <!-- Right Side Actions -->
-         <div class="navbar-actions d-flex align-items-center ms-auto" style="gap: 10px;">
-               <!-- Login/Sign Up Buttons (for guests) -->
-               {{^isloggedin}}
-              <div class="auth-buttons d-flex align-items-center">
-                  <a href="{{{ config.wwwroot }}}/login/index.php" class="btn btn-outline-primary me-2" style="border: 1px solid #FF6B35; color: #FF6B35; background: transparent; border-radius: 8px; padding: 5px 16px; font-weight: 500; text-decoration: none;">
-                     Login
-                  </a>
-                  <a href="{{{ config.wwwroot }}}/login/signup.php" class="btn btn-primary" style="background: #FF6B35; border: 1px solid #FF6B35; color: white; border-radius: 8px; padding: 5px 16px; font-weight: 500; text-decoration: none;">
-                     Sign Up
-                  </a>
-               </div>
-               {{/isloggedin}}
-
-               <!-- User Navigation (for logged in users) -->
-               {{#isloggedin}}
-               <div class="d-none d-lg-flex">
-                  <div id="usernavigation" class="d-flex ms-auto align-items-center" data-nice-type="user-navigation">
-                     {{# output.search_box }}
-                     {{^isguest}}
-                     <div class="nice-search-container me-3">
-                        <a href="{{searchurl}}" data-nice-is-guest="{{isguest}}" style="color: #666;">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        </a>
-                     </div>
-                     {{/isguest}}
-                     {{/output.search_box }}
-                     
-                     {{{ output.navbar_plugin_output }}}
-                     
-                     <div class="d-flex align-items-stretch usermenu-container me-3" data-region="usermenu">
-                        {{#usermenu}}
-                        {{> core/user_menu }}
-                        {{/usermenu}}
-                     </div>
-                     
+            <!--End primary-navigation -->
+            {{/primarymoremenu}}
+            <div class="d-none d-lg-flex ms-auto">
+               <div id="usernavigation" class="d-flex ms-auto align-items-center" data-nice-type="user-navigation">
+                  {{# output.search_box }}
+                  {{#isloggedin}}
+                  {{^isguest}}
+                  <div class="nice-search-container">
+                     <a href="{{searchurl}}" data-nice-is-guest="{{isguest}}">
+                     <i class="fa-solid fa-magnifying-glass"></i>
+                     </a>
+                  </div>
+                  {{/isguest}}
+                  {{/isloggedin}}
+                  {{/output.search_box }}
+                  {{{ output.navbar_plugin_output }}}
+                  <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                     {{#usermenu}}
+                     {{> core/user_menu }}
+                     {{/usermenu}}
+                  </div>
+                  <div class="d-none d-sm-block">
                      {{#primarymoremenu}}
+                     {{#isloggedin}}
                      {{#canaccessadmin}}
-                     <div class="nice-settings-container me-3">
-                        <a class="nice-settings" href="{{{ config.wwwroot }}}/admin/search.php" aria-label="Settings" style="color: #666;">
+                     <div class="nice-settings-container ">
+                        <a class="nice-settings" href="{{{ config.wwwroot }}}/admin/search.php" aria-label="Settings">
                         <i class="fa-solid fa-gear"></i>
                         </a>
                      </div>
                      {{/canaccessadmin}}
+                     {{/isloggedin}}
                      {{/primarymoremenu}}
-                     
-                     <div class="d-none d-sm-block">
-                        {{{ output.edit_switch }}}
-                     </div>
                   </div>
+                  <div class="d-none d-sm-block">
+                     {{{ output.edit_switch }}}
+                  </div>
+                  <div id="searchform-navbar" class="collapse d-none">
+                     <form autocomplete="off" action="#" method="get" accept-charset="utf-8"
+                        class="mform d-flex flex-wrap align-items-center searchform-navbar">
+                        <input type="hidden" name="context" value="1">
+                        <div class="input-group">
+                           <input type="text" class="form-control withclear"
+                              placeholder="Search"
+                              aria-label="Search"
+                              name="q"
+                              data-region="input"
+                              autocomplete="off">
+                           <label class="visually-hidden">Search</label>
+                           <a class="btn btn-close collapsed"
+                              data-action="closesearch"
+                              data-bs-toggle="collapse"
+                              href="#searchform-navbar"
+                              role="button"
+                              aria-expanded="false">
+                           <span class="visually-hidden">Close</span>
+                           </a>
+                           <button type="submit" class="btn btn-submit" data-action="submit">
+                           <i class="icon fa fa-magnifying-glass fa-fw" aria-hidden="true"></i>
+                           <span class="visually-hidden">Search</span>
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+                  <a class="d-none rounded-0 nav-link icon-no-margin collapsed" data-bs-toggle="collapse" data-action="opensearch" href="#searchform-navbar" role="button" aria-expanded="false" aria-controls="searchform-navbar" title="Toggle search input">
+                  <i class="icon fa fa-magnifying-glass fa-fw" aria-hidden="true"></i>
+                  <span class="visually-hidden">Toggle search input</span>
+                  </a>
                </div>
-               {{/isloggedin}}
+               <!--End usernavigation -->
             </div>
          </div>
          <!--End collapse -->
-
-         <!-- Hidden Search Form -->
-         <div id="searchform-navbar" class="collapse d-none position-absolute" style="top: 100%; left: 0; right: 0; z-index: 1000;">
-            <form autocomplete="off" action="#" method="get" accept-charset="utf-8"
-               class="mform d-flex flex-wrap align-items-center searchform-navbar bg-white p-3 shadow">
-               <input type="hidden" name="context" value="1">
-               <div class="input-group">
-                  <input type="text" class="form-control withclear"
-                     placeholder="Search"
-                     aria-label="Search"
-                     name="q"
-                     data-region="input"
-                     autocomplete="off">
-                  <label class="visually-hidden">Search</label>
-                  <a class="btn btn-close collapsed"
-                     data-action="closesearch"
-                     data-bs-toggle="collapse"
-                     href="#searchform-navbar"
-                     role="button"
-                     aria-expanded="false">
-                  <span class="visually-hidden">Close</span>
-                  </a>
-                  <button type="submit" class="btn btn-submit" data-action="submit">
-                  <i class="icon fa fa-magnifying-glass fa-fw" aria-hidden="true"></i>
-                  <span class="visually-hidden">Search</span>
-                  </button>
-               </div>
-            </form>
-         </div>
       </nav>
    </div>
 </div>
-<!--End nice-navbar-container -->
+<!-End nice-navbar-container -->
 {{> theme_boost/primary-drawer-mobile }}
-
-<!-- Bootstrap 5 JS (required for burger menu to work) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
